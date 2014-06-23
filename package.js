@@ -18,14 +18,6 @@ Package.on_use(function(api, where) {
         'templating'
     ], 'client');
 
-    /*
-    api.add_files([
-    // accounts-emails-field fake deps (server)
-        'lib/accounts-meld/lib/accounts-emails-field/accounts-emails-field.js',
-    // accounts-meld fake deps (server)
-        'lib/accounts-meld/lib/accounts-meld-server.js',
-    ], ['server']);
-    */
     api.add_files([
         'lib/accounts-templates-core.js',
         'lib/accounts-templates-methods.js',
@@ -43,16 +35,6 @@ Package.on_use(function(api, where) {
         'iron-router',
     ], ['client', 'server']);
 
-/*
-    api.export([
-        'AccountsMerge',
-        'MergeActions',
-    ], ['server']);
-
-    api.export([
-        'MergeActions',
-    ], ['client']);
-*/
     api.export([
         'AccountsTemplates',
     ], ['client', 'server']);
