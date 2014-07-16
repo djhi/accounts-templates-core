@@ -15,7 +15,6 @@ Package.on_use(function(api, where) {
     api.use([
         'minimongo',
         'mongo-livedata',
-        'sha',
         'templating'
     ], 'client');
 
