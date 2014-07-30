@@ -27,12 +27,13 @@ Tinytest.add("AccountsTemplates - addField/removeField", function(test) {
     });
 
     // Trying to remove an existing field
-    AccountsTemplates.removeField('login');
-    test.isUndefined(AccountsTemplates.getField('login'));
+    AccountsTemplates.removeField('email');
+    test.isUndefined(AccountsTemplates.getField('email'));
 
     // Trying to add an already existing field
     test.throws(function() {
-        AccountsTemplates.addField(AccountsTemplates.getField('password'));
+        var pwd = _.omit(AccountsTemplates.getField('password'), 'visible');
+        AccountsTemplates.addField(pwd);
     }, function(err) {
         if (err instanceof Error && err.message == 'A field called password already exists!')
             return true;
